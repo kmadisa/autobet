@@ -1,8 +1,9 @@
 name: Mind Your Stonks
 
 on:
-  schedule:
-    - cron: "0/5 * * * *"
+  push:
+    branches: 
+      - test
 
 jobs:
   monitor:
@@ -31,11 +32,11 @@ jobs:
     - name: Install repo
       run: |
         pip install .
-    - name: Read balance
-      run: |
-        query_balance.py $USERNAME $PASSWORD
-      if: github.ref != 'refs/heads/master'
-    - name: Publish sheets
-      run: |
-        query_balance.py $USERNAME $PASSWORD --update-spreadsheet ./client_secret.json
-      if: github.ref == 'refs/heads/master'
+    #- name: Read balance
+    #  run: |
+    #    query_balance.py $USERNAME $PASSWORD
+    # if: github.ref != 'refs/heads/master'
+    #- name: Publish sheets
+    #  run: |
+    #    query_balance.py $USERNAME $PASSWORD --update-spreadsheet ./client_secret.json
+    #  if: github.ref == 'refs/heads/master'
