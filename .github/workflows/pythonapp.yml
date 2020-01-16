@@ -32,9 +32,9 @@ jobs:
     - name: Install repo
       run: |
         pip install .
-    #- name: Read balance
-    #  run: |
-    #    query_balance.py $USERNAME $PASSWORD
+    - name: Read balance
+      run: |
+        query_balance.py ${{ secrets.USERNAME }} ${{ secrets.PASSWORD }}
     # if: github.ref != 'refs/heads/master'
     #- name: Publish sheets
     #  run: |
