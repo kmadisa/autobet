@@ -24,8 +24,9 @@ jobs:
         mkdir geckodriver
         tar -xzf geckodriver-v0.24.0-linux64.tar.gz -C geckodriver
         ls geckodriver
+        chmod +x geckodriver/geckodriver
         export PATH=$PATH:$PWD/geckodriver
-        sudo cp -r geckodriver /usr/local/bin
+        sudo cp geckodriver/geckodriver /usr/local/bin
         which geckodriver
         ll /usr/local/bin/geckodriver
         echo $PATH
