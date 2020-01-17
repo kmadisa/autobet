@@ -41,7 +41,7 @@ jobs:
       run: |
         query_balance.py ${{ secrets.USERNAME }} ${{ secrets.PASSWORD }}
     # if: github.ref != 'refs/heads/master'
-    #- name: Publish sheets
-    #  run: |
-    #    query_balance.py $USERNAME $PASSWORD --update-spreadsheet ./client_secret.json
+    - name: Publish sheets
+      run: |
+        query_balance.py $USERNAME $PASSWORD --update-spreadsheet ./client_secret.json
     #  if: github.ref == 'refs/heads/master'
