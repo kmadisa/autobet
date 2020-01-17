@@ -28,7 +28,6 @@ jobs:
         export PATH=$PATH:$PWD/geckodriver
         sudo cp geckodriver/geckodriver /usr/local/bin
         which geckodriver
-        ll /usr/local/bin/geckodriver
         echo $PATH
         geckodriver --version || exit 1
         pip install gspread
