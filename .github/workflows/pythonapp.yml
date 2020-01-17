@@ -25,6 +25,7 @@ jobs:
         tar -xzf geckodriver-v0.24.0-linux64.tar.gz -C geckodriver
         ls -a
         export PATH=$PATH:$PWD/geckodriver
+        cp geckodriver /usr/local/bin
         echo $PATH
         geckodriver --version || exit 1
         pip install gspread
