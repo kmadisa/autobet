@@ -18,7 +18,7 @@ jobs:
     - name: Install dependencies
       run: |
         echo $PWD
-        openssl aes-256-cbc -K ${{ secrets.encrypted_e21a95bd5d44_key }} -iv ${{ secrets.encrypted_e21a95bd5d44_iv }} -in client_secret.json.enc -out client_secret.json -d
+        openssl enc aes-256-cbc -d -pass pass:${{ secrets.sheet_password }} -in client_secret.enc -out client_secret.json
         pip install selenium
         wget https://github.com/mozilla/geckodriver/releases/download/v0.24.0/geckodriver-v0.24.0-linux64.tar.gz
         mkdir geckodriver
